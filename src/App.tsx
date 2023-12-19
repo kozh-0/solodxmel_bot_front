@@ -33,21 +33,22 @@ export default function App() {
           ),
         });
         console.log("SUCCESS!", res.status, res.text);
-        setTimeout(() => {
-          window.close();
-        }, 4000);
+        // setTimeout(() => {
+        //   window.close();
+        // }, 4000);
       })
       .catch((err) => {
+        message.error({ content: "Что-то пошло не так..." });
         console.log("FAILED...", err);
       })
-      .finally(() => setIsLoading(true));
+      .finally(() => setIsLoading(false));
   };
 
   return (
     <main>
       <Form
         disabled={isLoading}
-        style={{ marginTop: "30px", maxWidth: 800, textAlign: "right" }}
+        style={{ maxWidth: 800, textAlign: "right" }}
         // labelCol={{ span: 10 }}
         // wrapperCol={{ span: 16 }}
         onFinish={sendEmail}
@@ -99,7 +100,7 @@ export default function App() {
           <TextArea placeholder="Комментарий" style={{ minHeight: "100px", resize: "none" }} />
         </Form.Item>
 
-        <Button type="primary" htmlType="submit" style={{}}>
+        <Button type="primary" htmlType="submit" loading={isLoading}>
           Отправить письмо
         </Button>
       </Form>
