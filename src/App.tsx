@@ -51,7 +51,7 @@ export default function App() {
     <main>
       <Spin
         size="large"
-        tip={<span /*  style={{ color: "white" }} */>Отправляем письмо...</span>}
+        tip={<span style={{ color: "white" }}>Отправляем письмо...</span>}
         spinning={isLoading}
       >
         <Form
