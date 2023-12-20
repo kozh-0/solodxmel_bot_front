@@ -28,12 +28,12 @@ p {
 }
 
 main {
-  background: #001120 url("/bg1.jpg") no-repeat right top / cover;
+  background: #020202 url("/bg1.jpg") no-repeat right top / cover;
   display: flex;
   justify-content: center;
   /* overflow-y: scroll;
   width: 100%; */
-  height: 100vh;
+  height: calc(100vh - 60px);
   padding: 30px 10px;
 }
 
